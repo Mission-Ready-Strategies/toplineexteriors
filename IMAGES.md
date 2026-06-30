@@ -1,6 +1,13 @@
 # Image manifest
 
-Every photo on the site is currently a labeled placeholder. To place a real photo:
+## Status
+
+Placed (4 photos provided): `hero-fence.jpg`, `wood-privacy-fence.jpg`, `aluminum-fence.jpg`, `wood-gate.jpg`.
+These fill: the hero, all 4 home "Recent Projects" tiles, the Fence Installation + Gates service sections, the About story image, and the first 4 gallery tiles.
+
+Still placeholders (need photos): `project-5` (siding), `service-fence-repair`, `service-exterior-repairs`, and gallery tiles 5 to 12.
+
+To place a real photo:
 
 1. Drop the file in `assets/img/` using the exact filename below.
 2. In the page, replace the placeholder `<div class="placeholder ..." data-img="assets/img/NAME.jpg"> ... </div>`
