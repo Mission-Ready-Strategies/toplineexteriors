@@ -12,6 +12,7 @@
   --color-brand: #FD6003;          /* the logo orange: fills, icons, accents, large display */
   --color-brand-hover: #E0540A;    /* hover state for orange fills */
   --color-on-brand: #14171A;       /* text/icons placed ON an orange fill */
+  --color-brand-text: #B4470A;     /* accessible orange for TEXT and ICONS on LIGHT surfaces (>=4.5:1) */
 
   /* Text */
   --color-ink: #14171A;            /* headings */
@@ -30,6 +31,7 @@
   /* Lines / borders */
   --color-line: #E3E7EB;           /* hairline borders on light */
   --color-line-strong: #CBD2D8;    /* emphasized borders / inputs */
+  --color-line-input: #767C82;     /* form-control borders (>=3:1 on white) */
   --color-line-inverse: rgba(255, 255, 255, 0.12); /* borders on dark */
 
   /* Type */
@@ -52,12 +54,23 @@ html { scroll-behavior: smooth; background-color: var(--color-surface-darkest); 
   body > footer { padding-bottom: env(safe-area-inset-bottom); }
 }
 
+/* Keyboard focus indicator (Tailwind preflight strips the UA outline). Orange
+   outline reads on both light (3:1) and dark (5.8:1) surfaces. */
+@layer base {
+  :where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
 /* =========================================================================
    COMPONENTS  (use these everywhere; change once, changes everywhere)
    ========================================================================= */
 @layer components {
   /* Layout */
   .container-page { @apply mx-auto w-full max-w-7xl px-5 lg:px-8; }
+  .skip-link { @apply absolute left-2 top-2 z-[100] -translate-y-[150%] rounded-md bg-brand px-4 py-2 font-display text-sm font-bold uppercase text-on-brand transition focus:translate-y-0; }
   .section { @apply py-16 lg:py-24; }
   .section-tight { @apply py-14 lg:py-20; }
 
@@ -75,30 +88,30 @@ html { scroll-behavior: smooth; background-color: var(--color-surface-darkest); 
   /* text-base (16px) prevents iOS from zooming the page when a field is focused */
   .input,
   .select,
-  .textarea { @apply w-full rounded-md border border-line-strong bg-surface px-4 py-3 text-base text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30; }
+  .textarea { @apply w-full rounded-md border border-line-input bg-surface px-4 py-3 text-base text-ink placeholder:text-muted focus:border-brand-text focus:outline-none focus:ring-2 focus:ring-brand-text; }
 
   /* Cards */
   .card { @apply rounded-xl border border-line bg-surface p-7; }
   .card-hover { @apply transition hover:border-brand hover:shadow-lg; }
 
   /* Labels and headings */
-  .eyebrow { @apply inline-flex items-center gap-3 font-display text-xs font-bold uppercase tracking-[0.28em] text-brand; }
-  .eyebrow::before { content: ""; display: block; height: 2px; width: 2rem; background: var(--color-brand); }
+  .eyebrow { @apply inline-flex items-center gap-3 font-display text-xs font-bold uppercase tracking-[0.28em] text-brand-text; }
+  .eyebrow::before { content: ""; display: block; height: 2px; width: 2rem; background: var(--color-brand-text); }
   .eyebrow-center { @apply justify-center; }
-  .eyebrow-center::after { content: ""; display: block; height: 2px; width: 2rem; background: var(--color-brand); }
+  .eyebrow-center::after { content: ""; display: block; height: 2px; width: 2rem; background: var(--color-brand-text); }
   .section-title { @apply font-display text-3xl font-extrabold uppercase text-ink sm:text-4xl; }
 
   /* Links / chips / misc */
-  .link-more { @apply inline-flex items-center gap-1 font-display text-xs font-bold uppercase tracking-wide text-brand; }
-  .nav-link { @apply font-display text-sm font-semibold uppercase tracking-wide text-body transition hover:text-brand; }
-  .nav-link-active { @apply text-brand; }
+  .link-more { @apply inline-flex items-center gap-1 font-display text-xs font-bold uppercase tracking-wide text-brand-text; }
+  .nav-link { @apply font-display text-sm font-semibold uppercase tracking-wide text-body transition hover:text-brand-text; }
+  .nav-link-active { @apply text-brand-text underline decoration-2 underline-offset-4; }
   .chip { @apply cursor-pointer rounded-full border border-line px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-body transition hover:border-brand; }
-  .chip[aria-pressed="true"] { @apply border-brand bg-brand text-on-brand; }
+  .chip[aria-pressed="true"] { @apply border-brand bg-brand font-bold text-on-brand; }
   /* Category tag overlaid on a project photo (parent must be relative) */
   .tag { @apply absolute bottom-2 left-2 rounded-full bg-ink/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-inverse; }
 
   /* Image placeholder (swap with a real <img> when photos are provided) */
   .placeholder { @apply flex flex-col items-center justify-center gap-1 bg-surface-sunken text-center text-muted; }
   .placeholder-label { @apply text-[11px] font-semibold uppercase tracking-wide; }
-  .placeholder-dim { @apply font-display text-[10px] font-bold uppercase tracking-widest text-line-strong; }
+  .placeholder-dim { @apply font-display text-[10px] font-bold uppercase tracking-widest text-muted; }
 }
