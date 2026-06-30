@@ -51,4 +51,4 @@ Icons (service cards, why-choose, contact) are inline SVG and need no files.
 
 ## Already provided (no action)
 
-Logos (`assets/logo-*.svg`), favicons (`assets/favicon*`, `assets/icon-*`, `assets/apple-touch-icon.png`), and the social share image (`assets/og-image.png`).
+Logos (`assets/logo-*.svg`), favicons (`assets/favicon*`, `assets/icon-*`, `assets/apple-touch-icon.png`), and the social share image (`assets/og-image.jpg`).
