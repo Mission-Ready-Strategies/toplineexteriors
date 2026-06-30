@@ -2,10 +2,9 @@
 
 ## Status
 
-All site photos are **webp**. Placed (8): `hero-fence`, `wood-privacy-fence`, `aluminum-fence`, `wood-gate`, `fence-installation`, `fence-repair`, `exterior-repairs`, `crew-install`.
-These fill: the hero, all 5 home "Recent Projects" tiles, all 4 service sections (installation, repair, gates, exterior), the About image, and gallery tiles 1 to 8.
+All site photos are **webp** (12 total). They fill the hero, all 5 home "Recent Projects" tiles, all 4 service sections, the About image, and all 12 gallery tiles. Every category is covered: Wood, Vinyl, Aluminum, Chain Link, Gates, Repairs.
 
-Still placeholders (need photos): gallery tiles 9 to 12.
+No placeholders remain.
 
 To place a real photo (export as webp):
 

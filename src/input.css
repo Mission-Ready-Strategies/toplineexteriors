@@ -43,6 +43,14 @@ html { scroll-behavior: smooth; }
 .hero-clip { clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); }
 @media (max-width: 1023px) { .hero-clip { clip-path: none; } }
 
+/* iOS safe-area insets (notch, Dynamic Island, home indicator).
+   Pairs with viewport-fit=cover in the page meta. */
+@supports (padding: env(safe-area-inset-top)) {
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  body > header { padding-top: env(safe-area-inset-top); }
+  body > footer { padding-bottom: env(safe-area-inset-bottom); }
+}
+
 /* =========================================================================
    COMPONENTS  (use these everywhere; change once, changes everywhere)
    ========================================================================= */
@@ -58,6 +66,7 @@ html { scroll-behavior: smooth; }
   .btn-primary { @apply bg-brand text-on-brand hover:bg-brand-hover; }
   .btn-outline { @apply border-2 border-body/30 text-body hover:border-body hover:bg-body hover:text-inverse; }
   .btn-inverse { @apply bg-surface text-ink hover:bg-surface-muted; }
+  .btn-outline-inverse { @apply border-2 border-inverse/60 text-inverse hover:border-inverse hover:bg-surface hover:text-ink; }
   .btn-block { @apply w-full; }
 
   /* Form controls */
