@@ -1,12 +1,12 @@
 # Top Line Exteriors
 
-Marketing website for **Top Line Exteriors** — Fencing &amp; Exterior Repairs, Built for Michigan.
+Marketing website for **Top Line Exteriors**: Fencing &amp; Exterior Repairs, Built for Michigan.
 
 Static site hosted on **GitHub Pages**. Built with hand-written HTML + [Tailwind CSS](https://tailwindcss.com) (standalone CLI, no Node build required).
 
 ## Current state
 
-- `index.html` — **Coming Soon** page (live).
+- `index.html`: **Coming Soon** page (live).
 - The full multi-page site (Home / Services / About / Gallery / Contact) is in progress.
 
 ## Project structure
