@@ -90,7 +90,8 @@ html { scroll-behavior: smooth; }
   .link-more { @apply inline-flex items-center gap-1 font-display text-xs font-bold uppercase tracking-wide text-brand; }
   .nav-link { @apply font-display text-sm font-semibold uppercase tracking-wide text-body transition hover:text-brand; }
   .nav-link-active { @apply text-brand; }
-  .chip { @apply rounded-full border border-line px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-body; }
+  .chip { @apply cursor-pointer rounded-full border border-line px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-body transition hover:border-brand; }
+  .chip[aria-pressed="true"] { @apply border-brand bg-brand text-on-brand; }
   /* Category tag overlaid on a project photo (parent must be relative) */
   .tag { @apply absolute bottom-2 left-2 rounded-full bg-ink/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-inverse; }
 
