@@ -82,6 +82,8 @@ html { scroll-behavior: smooth; }
   .nav-link { @apply font-display text-sm font-semibold uppercase tracking-wide text-body transition hover:text-brand; }
   .nav-link-active { @apply text-brand; }
   .chip { @apply rounded-full border border-line px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-body; }
+  /* Category tag overlaid on a project photo (parent must be relative) */
+  .tag { @apply absolute bottom-2 left-2 rounded-full bg-ink/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-inverse; }
 
   /* Image placeholder (swap with a real <img> when photos are provided) */
   .placeholder { @apply flex flex-col items-center justify-center gap-1 bg-surface-sunken text-center text-muted; }
