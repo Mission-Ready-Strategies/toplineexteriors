@@ -7,8 +7,7 @@ Static site hosted on **GitHub Pages**. Hand-written HTML + [Tailwind CSS](https
 ## Pages
 
 - `index.html` (Home), `services.html`, `about.html`, `gallery.html`, `contact.html`.
-- `coming-soon.html` is the previous launch page, kept for reuse.
-- The published GitHub Pages site stays on the Coming Soon page until this is pushed.
+- `404.html` is the branded not-found page (served by GitHub Pages on unknown routes).
 
 ## Design system
 
@@ -38,16 +37,15 @@ Commit the regenerated `assets/css/site.css` so GitHub Pages serves the latest s
 
 ## Images
 
-Every photo is a placeholder (`.placeholder` div with a `data-img` path) until real photos are provided. See `IMAGES.md` for the full list of slots, intended filenames, and sizes. Drop files into `assets/img/` and swap the placeholder div for an `<img>`.
+All site photos are placed and served as WebP from `assets/img/` (12 total, no placeholders remain). See `IMAGES.md` for the slot-by-slot manifest, intended filenames, and target sizes.
 
 ## Contact form (Web3Forms)
 
 The site is static (no backend). Forms post to [Web3Forms](https://web3forms.com) via `assets/js/contact-form.js`.
 
-1. Create a free access key at web3forms.com (enter the inbox email that should receive leads).
-2. Replace `YOUR_WEB3FORMS_ACCESS_KEY` in the hidden `access_key` input on `index.html` and `contact.html`.
+The public-safe `access_key` is already set in the hidden `access_key` input on `index.html` and `contact.html`. To route leads to a different inbox, create a new key at web3forms.com and replace it in both files.
 
-The access key is public-safe (it only routes mail to your inbox). Free tier is 250 submissions per month.
+The access key is public-safe (it only routes mail to the configured inbox). Free tier is 250 submissions per month.
 
 ## Brand
 
