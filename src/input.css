@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@source "../index.html";
+@source "../prototype/*.html";
+
+@theme {
+  --color-brand: #FF6A00;
+  --color-brand-dark: #E15E00;
+  --color-brand-light: #FF8A3D;
+  --color-ink: #111111;
+  --color-charcoal: #2A2D31;
+  --color-charcoal-deep: #1E2024;
+  --color-steel: #5C6166;
+
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}

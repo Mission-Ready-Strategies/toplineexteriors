@@ -1,0 +1,17 @@
+# Tailwind standalone binary (81MB — re-download from GitHub releases when needed)
+bin/
+
+# Internal brand source: brand-package PDF, social mockups, source logos.
+# The site uses the copies in /assets instead. Kept out of the public repo.
+Branding/
+
+# Full-site prototype (CDN-based WIP, not the production build)
+prototype/
+
+# Node (only if a build toolchain is added later)
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
