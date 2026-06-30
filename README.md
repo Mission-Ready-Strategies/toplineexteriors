@@ -59,3 +59,5 @@ The access key is public-safe (it only routes mail to your inbox). Free tier is 
 | Muted    | `#5C6166` | Secondary text             |
 
 Display font: **Archivo** · Body font: **Inter**.
+
+Icons: [Lucide](https://lucide.dev) (ISC License), inlined as a self-contained SVG sprite (no CDN).
