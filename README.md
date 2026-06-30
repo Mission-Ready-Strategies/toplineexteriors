@@ -2,27 +2,22 @@
 
 Marketing website for **Top Line Exteriors**: Fencing &amp; Exterior Repairs, Built for Michigan.
 
-Static site hosted on **GitHub Pages**. Built with hand-written HTML + [Tailwind CSS](https://tailwindcss.com) (standalone CLI, no Node build required).
+Static site hosted on **GitHub Pages**. Hand-written HTML + [Tailwind CSS](https://tailwindcss.com) (standalone CLI, no Node build required).
 
-## Current state
+## Pages
 
-- Full multi-page site built: `index.html` (Home), `services.html`, `about.html`, `gallery.html`, `contact.html`.
-- `coming-soon.html` is the previous Coming Soon page, kept for reuse.
-- The published GitHub Pages site remains the Coming Soon page until this is pushed.
+- `index.html` (Home), `services.html`, `about.html`, `gallery.html`, `contact.html`.
+- `coming-soon.html` is the previous launch page, kept for reuse.
+- The published GitHub Pages site stays on the Coming Soon page until this is pushed.
 
-## Project structure
+## Design system
 
-```
-index.html          Coming Soon page (served at the site root)
-assets/
-  logo-white.svg    Reversed logo (for dark backgrounds)
-  logo-dark.svg     Full-color logo (for light backgrounds)
-  css/site.css      Compiled, minified Tailwind output (committed for Pages)
-src/input.css       Tailwind source (@theme brand tokens + directives)
-.nojekyll           Disable Jekyll processing on GitHub Pages
-```
+All styling flows from one place: `src/input.css`.
 
-## Local development
+- **Tokens** (`@theme`): brand orange is pulled from the logo (`#FD6003`); plus surface, text, and border tokens. There are **no hardcoded colors** in the markup.
+- **Components** (`@layer components`): `.btn` / `.btn-primary` / `.btn-outline` / `.btn-inverse`, `.input` / `.select` / `.textarea`, `.card`, `.eyebrow`, `.section-title`, `.chip`, `.placeholder`, `.container-page`, `.section`. Change a component once and it updates everywhere.
+
+## Build
 
 The Tailwind standalone CLI lives in `bin/` (gitignored). Download the macOS arm64 build:
 
@@ -35,46 +30,32 @@ chmod +x bin/tailwindcss
 Rebuild the stylesheet after editing markup or `src/input.css`:
 
 ```bash
-# one-off, minified
-bin/tailwindcss -i src/input.css -o assets/css/site.css --minify
-
-# watch mode while developing
-bin/tailwindcss -i src/input.css -o assets/css/site.css --watch
+bin/tailwindcss -i src/input.css -o assets/css/site.css --minify   # one-off
+bin/tailwindcss -i src/input.css -o assets/css/site.css --watch     # while developing
 ```
 
 Commit the regenerated `assets/css/site.css` so GitHub Pages serves the latest styles.
+
+## Images
+
+Every photo is a placeholder (`.placeholder` div with a `data-img` path) until real photos are provided. See `IMAGES.md` for the full list of slots, intended filenames, and sizes. Drop files into `assets/img/` and swap the placeholder div for an `<img>`.
+
+## Contact form (Web3Forms)
+
+The site is static (no backend). Forms post to [Web3Forms](https://web3forms.com) via `assets/js/contact-form.js`.
+
+1. Create a free access key at web3forms.com (enter the inbox email that should receive leads).
+2. Replace `YOUR_WEB3FORMS_ACCESS_KEY` in the hidden `access_key` input on `index.html` and `contact.html`.
+
+The access key is public-safe (it only routes mail to your inbox). Free tier is 250 submissions per month.
 
 ## Brand
 
 | Token    | Hex       | Use                        |
 | -------- | --------- | -------------------------- |
-| Orange   | `#FF6A00` | Primary accent             |
-| Black    | `#111111` | Headlines, dark UI         |
-| Charcoal | `#2A2D31` | Dark sections, footer      |
-| Gray     | `#5C6166` | Body copy                  |
+| Brand    | `#FD6003` | Primary accent (from logo) |
+| Ink      | `#14171A` | Headings                   |
+| Body     | `#2A2D31` | Body copy                  |
+| Muted    | `#5C6166` | Secondary text             |
 
 Display font: **Archivo** · Body font: **Inter**.
-
-## Contact form (Resend via Vercel function)
-
-The site is static, so the Resend API key must **never** live in the front end. The
-forms POST to a serverless function that holds the key as a server-side env var.
-
-Files:
-- `api/contact.js` serverless function (sends email via Resend)
-- `vercel.json` function config
-- `assets/js/contact-form.js` front-end handler (set the function URL in `ENDPOINT`)
-
-Deploy steps:
-1. Rotate your Resend key (the previous one was shared and is compromised). Resend → API Keys.
-2. Verify `toplineinstall.com` as a sending domain in Resend (add its DNS records in Vercel DNS).
-3. Deploy this repo to Vercel (zero-config: it auto-detects `api/contact.js`).
-4. In Vercel → Project → Settings → Environment Variables, add:
-   - `RESEND_API_KEY` = your new key
-   - `CONTACT_TO` = quote@toplineinstall.com
-   - `MAIL_FROM` = Top Line Exteriors &lt;quote@toplineinstall.com&gt;
-   - `ALLOWED_ORIGIN` = https://toplineinstall.com
-5. Put the function URL in `assets/js/contact-form.js` (`ENDPOINT`), e.g.
-   `https://<your-vercel-app>.vercel.app/api/contact`, then commit.
-
-Never commit the Resend key. It belongs only in Vercel environment variables.

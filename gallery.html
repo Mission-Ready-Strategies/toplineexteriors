@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | Top Line Exteriors</title>
   <meta name="description" content="See recent fencing, gate, and exterior repair projects by Top Line Exteriors across Michigan." />
-  <meta name="theme-color" content="#FF6A00" />
+  <meta name="theme-color" content="#FD6003" />
 
   <meta property="og:title" content="Gallery | Top Line Exteriors" />
   <meta property="og:description" content="See recent fencing, gate, and exterior repair projects by Top Line Exteriors across Michigan." />
@@ -43,96 +43,95 @@
   </script>
 </head>
 
-<body class="font-body bg-white text-charcoal antialiased">
+<body class="bg-surface font-body text-body antialiased">
 
   <!-- ===== HEADER ===== -->
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
+  <header class="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur">
+    <div class="container-page flex h-20 items-center justify-between gap-4">
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/logo-dark.svg" alt="Top Line Exteriors" class="h-11 w-11 shrink-0" />
         <span class="leading-none">
-          <span class="block font-display text-base font-extrabold uppercase tracking-tight text-ink sm:text-lg">Top <span class="text-brand-ink">Line</span> Exteriors</span>
-          <span class="mt-1 block text-[9px] font-semibold uppercase tracking-[0.3em] text-steel">Fencing &amp; Repairs</span>
+          <span class="block font-display text-base font-extrabold uppercase tracking-tight text-ink sm:text-lg">Top <span class="text-brand">Line</span> Exteriors</span>
+          <span class="mt-1 block text-[9px] font-semibold uppercase tracking-[0.3em] text-muted">Fencing &amp; Repairs</span>
         </span>
       </a>
-      <nav class="hidden items-center gap-8 font-display text-sm font-semibold uppercase tracking-wide lg:flex">
-        <a href="index.html" class="text-charcoal hover:text-brand-ink">Home</a>
-        <a href="services.html" class="text-charcoal hover:text-brand-ink">Services</a>
-        <a href="about.html" class="text-charcoal hover:text-brand-ink">About</a>
-        <a href="gallery.html" class="text-brand-ink">Gallery</a>
-        <a href="contact.html" class="text-charcoal hover:text-brand-ink">Contact</a>
+      <nav class="hidden items-center gap-8 lg:flex">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="gallery.html" class="nav-link nav-link-active">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="flex items-center gap-2">
-        <a href="contact.html" class="hidden items-center gap-2 rounded-md bg-brand px-5 py-2.5 font-display text-sm font-bold uppercase tracking-wide text-ink transition hover:bg-brand-light sm:inline-flex">Get a Quote</a>
+        <a href="contact.html" class="btn btn-primary btn-sm hidden sm:inline-flex">Get a Quote</a>
         <button id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" class="rounded-md p-2 text-ink lg:hidden">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </div>
-    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white lg:hidden">
-      <nav class="flex flex-col px-5 py-2 font-display text-sm font-semibold uppercase tracking-wide">
-        <a href="index.html" class="py-3 hover:text-brand-ink">Home</a>
-        <a href="services.html" class="py-3 hover:text-brand-ink">Services</a>
-        <a href="about.html" class="py-3 hover:text-brand-ink">About</a>
-        <a href="gallery.html" class="py-3 text-brand-ink">Gallery</a>
-        <a href="contact.html" class="py-3 hover:text-brand-ink">Contact</a>
-        <a href="contact.html" class="my-3 inline-flex w-full items-center justify-center rounded-md bg-brand px-5 py-3 font-bold text-ink">Get a Quote</a>
+    <div id="mobileMenu" class="hidden border-t border-line bg-surface lg:hidden">
+      <nav class="container-page flex flex-col py-2">
+        <a href="index.html" class="nav-link py-3">Home</a>
+        <a href="services.html" class="nav-link py-3">Services</a>
+        <a href="about.html" class="nav-link py-3">About</a>
+        <a href="gallery.html" class="nav-link nav-link-active py-3">Gallery</a>
+        <a href="contact.html" class="nav-link py-3">Contact</a>
+        <a href="contact.html" class="btn btn-primary btn-block my-3">Get a Quote</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- ===== PAGE HEADER ===== -->
-    <section class="bg-gradient-to-b from-[#EAF3FB] to-white">
-      <div class="mx-auto max-w-7xl px-5 py-14 lg:py-20 lg:px-8">
-        <p class="inline-flex items-center gap-3 text-xs font-display font-bold uppercase tracking-[0.28em] text-brand-ink"><span class="h-0.5 w-8 bg-brand"></span> Our Work</p>
-        <h1 class="mt-4 font-display text-4xl font-extrabold uppercase leading-[0.95] text-ink sm:text-5xl">Recent Projects</h1>
-        <p class="mt-5 max-w-xl text-base leading-relaxed text-charcoal">A look at the fences, gates, and exterior repairs we build across Michigan.</p>
+    <section class="section-tight bg-gradient-to-b from-surface-muted to-surface">
+      <div class="container-page text-center">
+        <p class="eyebrow eyebrow-center mb-3">Our Work</p>
+        <h1 class="section-title">Recent Projects</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-body">A look at the fences, gates, and exterior repairs we build across Michigan.</p>
       </div>
     </section>
 
     <!-- ===== CATEGORY CHIPS ===== -->
-    <section class="bg-white pt-12 lg:pt-16">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <section class="section-tight bg-surface">
+      <div class="container-page">
         <ul class="flex flex-wrap gap-3">
-          <li class="rounded-full border border-slate-300 bg-[#F4F7FA] px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-charcoal">Wood</li>
-          <li class="rounded-full border border-slate-300 bg-[#F4F7FA] px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-charcoal">Vinyl</li>
-          <li class="rounded-full border border-slate-300 bg-[#F4F7FA] px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-charcoal">Aluminum</li>
-          <li class="rounded-full border border-slate-300 bg-[#F4F7FA] px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-charcoal">Chain Link</li>
-          <li class="rounded-full border border-slate-300 bg-[#F4F7FA] px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-charcoal">Gates</li>
-          <li class="rounded-full border border-slate-300 bg-[#F4F7FA] px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-charcoal">Repairs</li>
+          <li class="chip">Wood</li>
+          <li class="chip">Vinyl</li>
+          <li class="chip">Aluminum</li>
+          <li class="chip">Chain Link</li>
+          <li class="chip">Gates</li>
+          <li class="chip">Repairs</li>
         </ul>
-        <p class="mt-4 text-sm leading-relaxed text-steel">These are sample placeholders until project photos are added.</p>
+        <p class="mt-4 text-sm leading-relaxed text-muted">These are sample placeholders until project photos are added.</p>
       </div>
     </section>
 
     <!-- ===== GALLERY GRID ===== -->
-    <section class="bg-white py-12 lg:py-16">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <section class="section bg-surface">
+      <div class="container-page">
         <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Wood privacy fence</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Aluminum fence</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Custom swing gate</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Vinyl fence</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Chain link</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Fence repair</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Siding repair</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Picket fence</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Gate hardware</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Post replacement</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Backyard enclosure</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
-          <div class="flex aspect-[4/3] flex-col items-center justify-center gap-1 rounded-lg bg-[#EBEEF1] text-center text-steel"><span class="text-brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg></span><span class="text-[11px] font-semibold uppercase tracking-wide">Trim work</span><span class="font-display text-[10px] font-bold tracking-widest text-slate-400">4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-01.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Wood privacy fence</span><span class="placeholder-dim">gallery-01 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-02.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Aluminum fence</span><span class="placeholder-dim">gallery-02 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-03.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Custom swing gate</span><span class="placeholder-dim">gallery-03 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-04.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Vinyl fence</span><span class="placeholder-dim">gallery-04 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-05.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Chain link</span><span class="placeholder-dim">gallery-05 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-06.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Fence repair</span><span class="placeholder-dim">gallery-06 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-07.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Siding repair</span><span class="placeholder-dim">gallery-07 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-08.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Picket fence</span><span class="placeholder-dim">gallery-08 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-09.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Gate hardware</span><span class="placeholder-dim">gallery-09 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-10.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Post replacement</span><span class="placeholder-dim">gallery-10 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-11.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Backyard enclosure</span><span class="placeholder-dim">gallery-11 &middot; 4:3</span></div>
+          <div class="placeholder aspect-[4/3] rounded-lg" data-img="assets/img/gallery-12.jpg"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" class="text-brand"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5L5 19"/></svg><span class="placeholder-label">Trim work</span><span class="placeholder-dim">gallery-12 &middot; 4:3</span></div>
         </div>
       </div>
     </section>
 
     <!-- ===== CTA BAND ===== -->
-    <section class="bg-charcoal py-16 text-white lg:py-20">
-      <div class="mx-auto flex max-w-5xl flex-col items-center gap-6 px-5 text-center lg:px-8">
-        <h2 class="font-display text-3xl font-extrabold uppercase text-white sm:text-4xl">Ready to Start Your Project?</h2>
-        <p class="max-w-xl leading-relaxed text-slate-300">Tell us what you have in mind and we will get back to you quickly with a fair, no-obligation quote.</p>
-        <a href="contact.html" class="inline-flex items-center gap-2 rounded-md bg-brand px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide text-ink transition hover:bg-brand-light">
-          Get a Free Estimate
+    <section class="section-tight bg-surface-dark text-inverse">
+      <div class="container-page flex flex-col items-center gap-6 text-center">
+        <h2 class="section-title text-inverse">Ready to Start Your Project?</h2>
+        <p class="max-w-xl leading-relaxed text-inverse-muted">Tell us what you have in mind and we will get back to you quickly with a fair, no-obligation quote.</p>
+        <a href="contact.html" class="btn btn-primary">Get a Free Estimate
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
@@ -140,45 +139,46 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="bg-ink text-slate-300">
-    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+  <footer class="bg-surface-darkest text-inverse-muted">
+    <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <img src="assets/logo-reversed.svg" alt="Top Line Exteriors" class="mb-4 h-12 w-12" />
-        <p class="max-w-xs text-sm leading-relaxed text-slate-400">Professional fencing and exterior repairs across Michigan. Built to last.</p>
+        <p class="max-w-xs text-sm leading-relaxed text-inverse-muted">Professional fencing and exterior repairs across Michigan. Built to last.</p>
       </div>
       <div>
-        <h3 class="mb-4 font-display text-sm font-bold uppercase tracking-wide text-white">Services</h3>
+        <h3 class="mb-4 font-display text-sm font-bold uppercase tracking-wide text-inverse">Services</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="services.html#fence-installation" class="hover:text-brand-light">Fence Installation</a></li>
-          <li><a href="services.html#fence-repair" class="hover:text-brand-light">Fence Repair</a></li>
-          <li><a href="services.html#gates" class="hover:text-brand-light">Gates</a></li>
-          <li><a href="services.html#exterior-repairs" class="hover:text-brand-light">Exterior Repairs</a></li>
+          <li><a href="services.html#fence-installation" class="hover:text-brand">Fence Installation</a></li>
+          <li><a href="services.html#fence-repair" class="hover:text-brand">Fence Repair</a></li>
+          <li><a href="services.html#gates" class="hover:text-brand">Gates</a></li>
+          <li><a href="services.html#exterior-repairs" class="hover:text-brand">Exterior Repairs</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="mb-4 font-display text-sm font-bold uppercase tracking-wide text-white">Company</h3>
+        <h3 class="mb-4 font-display text-sm font-bold uppercase tracking-wide text-inverse">Company</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="about.html" class="hover:text-brand-light">About Us</a></li>
-          <li><a href="gallery.html" class="hover:text-brand-light">Gallery</a></li>
-          <li><a href="contact.html" class="hover:text-brand-light">Contact</a></li>
+          <li><a href="about.html" class="hover:text-brand">About Us</a></li>
+          <li><a href="gallery.html" class="hover:text-brand">Gallery</a></li>
+          <li><a href="contact.html" class="hover:text-brand">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="mb-4 font-display text-sm font-bold uppercase tracking-wide text-white">Get in Touch</h3>
+        <h3 class="mb-4 font-display text-sm font-bold uppercase tracking-wide text-inverse">Get in Touch</h3>
         <ul class="space-y-3 text-sm">
-          <li class="flex items-center gap-2"><span class="text-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><a href="mailto:quote@toplineinstall.com" class="hover:text-brand-light">quote@toplineinstall.com</a></li>
+          <li class="flex items-center gap-2"><span class="text-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><a href="mailto:quote@toplineinstall.com" class="hover:text-brand">quote@toplineinstall.com</a></li>
           <li class="flex items-center gap-2"><span class="text-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span> Serving All of Michigan</li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-white/10">
-      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-5 text-xs text-slate-400 sm:flex-row lg:px-8">
+    <div class="border-t border-line-inverse">
+      <div class="container-page flex flex-col items-center justify-between gap-2 py-5 text-xs text-inverse-muted sm:flex-row">
         <span>&copy; 2026 Top Line Exteriors. All rights reserved.</span>
-        <span class="font-display font-bold uppercase tracking-[0.2em] text-brand-light">Built for Michigan</span>
+        <span class="font-display font-bold uppercase tracking-[0.2em] text-brand">Built for Michigan</span>
       </div>
     </div>
   </footer>
 
+  <script src="assets/js/contact-form.js" defer></script>
   <script>
     (function () {
       var btn = document.getElementById('navToggle'), menu = document.getElementById('mobileMenu');

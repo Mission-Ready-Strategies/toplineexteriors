@@ -3,22 +3,88 @@
 @source "../*.html";
 @source "../assets/js/*.js";
 
+/* =========================================================================
+   DESIGN TOKENS  (single source of truth, no hardcoded colors in markup)
+   Brand orange is pulled from the logo SVG (#FD6003).
+   ========================================================================= */
 @theme {
-  --color-brand: #FF6A00;
-  --color-brand-dark: #E15E00;
-  --color-brand-light: #FF8A3D;
-  --color-brand-ink: #B4470A;
-  --color-ink: #111111;
-  --color-charcoal: #2A2D31;
-  --color-charcoal-deep: #1E2024;
-  --color-steel: #5C6166;
+  /* Brand */
+  --color-brand: #FD6003;          /* the logo orange: fills, icons, accents, large display */
+  --color-brand-hover: #E0540A;    /* hover state for orange fills */
+  --color-on-brand: #14171A;       /* text/icons placed ON an orange fill */
 
+  /* Text */
+  --color-ink: #14171A;            /* headings */
+  --color-body: #2A2D31;           /* body copy (charcoal) */
+  --color-muted: #5C6166;          /* secondary / supporting text */
+  --color-inverse: #FFFFFF;        /* text on dark surfaces */
+  --color-inverse-muted: #C3C9CF;  /* muted text on dark surfaces */
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;        /* page background, cards */
+  --color-surface-muted: #F4F7FA;  /* alternating section band */
+  --color-surface-sunken: #EAEEF2; /* image placeholders, wells */
+  --color-surface-dark: #2A2D31;   /* charcoal sections (testimonial) */
+  --color-surface-darkest: #14171A;/* footer */
+
+  /* Lines / borders */
+  --color-line: #E3E7EB;           /* hairline borders on light */
+  --color-line-strong: #CBD2D8;    /* emphasized borders / inputs */
+  --color-line-inverse: rgba(255, 255, 255, 0.12); /* borders on dark */
+
+  /* Type */
   --font-display: "Archivo", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
 
-/* Signature diagonal image cut (homepage hero); disabled on small screens */
+/* Signature diagonal image cut (homepage hero); off on small screens */
 .hero-clip { clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); }
 @media (max-width: 1023px) { .hero-clip { clip-path: none; } }
+
+/* =========================================================================
+   COMPONENTS  (use these everywhere; change once, changes everywhere)
+   ========================================================================= */
+@layer components {
+  /* Layout */
+  .container-page { @apply mx-auto w-full max-w-7xl px-5 lg:px-8; }
+  .section { @apply py-16 lg:py-24; }
+  .section-tight { @apply py-14 lg:py-20; }
+
+  /* Buttons */
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3.5 font-display text-sm font-bold uppercase tracking-wide transition; }
+  .btn-sm { @apply px-5 py-2.5; }
+  .btn-primary { @apply bg-brand text-on-brand hover:bg-brand-hover; }
+  .btn-outline { @apply border-2 border-body/30 text-body hover:border-body hover:bg-body hover:text-inverse; }
+  .btn-inverse { @apply bg-surface text-ink hover:bg-surface-muted; }
+  .btn-block { @apply w-full; }
+
+  /* Form controls */
+  .field-label { @apply sr-only; }
+  .input,
+  .select,
+  .textarea { @apply w-full rounded-md border border-line-strong bg-surface px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30; }
+
+  /* Cards */
+  .card { @apply rounded-xl border border-line bg-surface p-7; }
+  .card-hover { @apply transition hover:border-brand hover:shadow-lg; }
+
+  /* Labels and headings */
+  .eyebrow { @apply inline-flex items-center gap-3 font-display text-xs font-bold uppercase tracking-[0.28em] text-brand; }
+  .eyebrow::before { content: ""; display: block; height: 2px; width: 2rem; background: var(--color-brand); }
+  .eyebrow-center { @apply justify-center; }
+  .eyebrow-center::after { content: ""; display: block; height: 2px; width: 2rem; background: var(--color-brand); }
+  .section-title { @apply font-display text-3xl font-extrabold uppercase text-ink sm:text-4xl; }
+
+  /* Links / chips / misc */
+  .link-more { @apply inline-flex items-center gap-1 font-display text-xs font-bold uppercase tracking-wide text-brand; }
+  .nav-link { @apply font-display text-sm font-semibold uppercase tracking-wide text-body transition hover:text-brand; }
+  .nav-link-active { @apply text-brand; }
+  .chip { @apply rounded-full border border-line px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-body; }
+
+  /* Image placeholder (swap with a real <img> when photos are provided) */
+  .placeholder { @apply flex flex-col items-center justify-center gap-1 bg-surface-sunken text-center text-muted; }
+  .placeholder-label { @apply text-[11px] font-semibold uppercase tracking-wide; }
+  .placeholder-dim { @apply font-display text-[10px] font-bold uppercase tracking-widest text-line-strong; }
+}
