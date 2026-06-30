@@ -2,19 +2,19 @@
 
 ## Status
 
-Placed (4 photos provided): `hero-fence.jpg`, `wood-privacy-fence.jpg`, `aluminum-fence.jpg`, `wood-gate.jpg`.
-These fill: the hero, all 4 home "Recent Projects" tiles, the Fence Installation + Gates service sections, the About story image, and the first 4 gallery tiles.
+All site photos are **webp**. Placed (8): `hero-fence`, `wood-privacy-fence`, `aluminum-fence`, `wood-gate`, `fence-installation`, `fence-repair`, `exterior-repairs`, `crew-install`.
+These fill: the hero, all 5 home "Recent Projects" tiles, all 4 service sections (installation, repair, gates, exterior), the About image, and gallery tiles 1 to 8.
 
-Still placeholders (need photos): `project-5` (siding), `service-fence-repair`, `service-exterior-repairs`, and gallery tiles 5 to 12.
+Still placeholders (need photos): gallery tiles 9 to 12.
 
-To place a real photo:
+To place a real photo (export as webp):
 
 1. Drop the file in `assets/img/` using the exact filename below.
 2. In the page, replace the placeholder `<div class="placeholder ..." data-img="assets/img/NAME.jpg"> ... </div>`
    with `<img src="assets/img/NAME.jpg" alt="DESCRIBE THE PHOTO" class="h-full w-full rounded-lg object-cover" loading="lazy" />`
    (the hero uses `object-cover` and fills its frame; no `rounded-lg` there).
 
-Format: JPG or WebP, sRGB. Target sizes are 2x of display size for sharp retina output. Keep each file roughly under 150 KB (hero under ~250 KB).
+Format: **WebP**, sRGB. Target sizes are 2x of display size for sharp retina output. Keep each file roughly under 150 KB. (Convert with Pillow or `cwebp`.)
 
 Icons (service cards, why-choose, contact) are inline SVG and need no files.
 
