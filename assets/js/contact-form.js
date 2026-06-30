@@ -3,13 +3,12 @@
 // Submissions are emailed straight to the inbox in ENDPOINT below, with the
 // visitor's email set as reply-to so you can reply to the lead directly.
 //
-// ONE-TIME SETUP: the first submission ever sent to a new inbox triggers a
-// FormSubmit activation email to that inbox. Click the "Activate Form" link once
-// and every submission after that is delivered automatically. (To hide the raw
-// address from the page source later, FormSubmit gives you a hashed alias after
-// activation: swap quote@toplineinstall.com below for that /ajax/el/XXXX value.)
+// The endpoint uses FormSubmit's hashed alias (activated), which maps to
+// quote@toplineinstall.com without exposing that address in the page source.
+// To reroute leads, activate the new inbox at formsubmit.co and replace the
+// hash below with its alias.
 (function () {
-  var ENDPOINT = "https://formsubmit.co/ajax/quote@toplineinstall.com";
+  var ENDPOINT = "https://formsubmit.co/ajax/c33fb6e60012d2339c554fc85feff3e7";
 
   function handle(form) {
     var status = form.querySelector("[data-form-status]");
