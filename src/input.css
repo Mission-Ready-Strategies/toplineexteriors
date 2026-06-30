@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-@source "../index.html";
-@source "../prototype/*.html";
+@source "../*.html";
+@source "../assets/js/*.js";
 
 @theme {
   --color-brand: #FF6A00;
@@ -16,3 +16,9 @@
   --font-display: "Archivo", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
+
+html { scroll-behavior: smooth; }
+
+/* Signature diagonal image cut (homepage hero); disabled on small screens */
+.hero-clip { clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); }
+@media (max-width: 1023px) { .hero-clip { clip-path: none; } }

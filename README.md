@@ -6,8 +6,9 @@ Static site hosted on **GitHub Pages**. Built with hand-written HTML + [Tailwind
 
 ## Current state
 
-- `index.html`: **Coming Soon** page (live).
-- The full multi-page site (Home / Services / About / Gallery / Contact) is in progress.
+- Full multi-page site built: `index.html` (Home), `services.html`, `about.html`, `gallery.html`, `contact.html`.
+- `coming-soon.html` is the previous Coming Soon page, kept for reuse.
+- The published GitHub Pages site remains the Coming Soon page until this is pushed.
 
 ## Project structure
 
@@ -53,3 +54,27 @@ Commit the regenerated `assets/css/site.css` so GitHub Pages serves the latest s
 | Gray     | `#5C6166` | Body copy                  |
 
 Display font: **Archivo** · Body font: **Inter**.
+
+## Contact form (Resend via Vercel function)
+
+The site is static, so the Resend API key must **never** live in the front end. The
+forms POST to a serverless function that holds the key as a server-side env var.
+
+Files:
+- `api/contact.js` serverless function (sends email via Resend)
+- `vercel.json` function config
+- `assets/js/contact-form.js` front-end handler (set the function URL in `ENDPOINT`)
+
+Deploy steps:
+1. Rotate your Resend key (the previous one was shared and is compromised). Resend → API Keys.
+2. Verify `toplineinstall.com` as a sending domain in Resend (add its DNS records in Vercel DNS).
+3. Deploy this repo to Vercel (zero-config: it auto-detects `api/contact.js`).
+4. In Vercel → Project → Settings → Environment Variables, add:
+   - `RESEND_API_KEY` = your new key
+   - `CONTACT_TO` = quote@toplineinstall.com
+   - `MAIL_FROM` = Top Line Exteriors &lt;quote@toplineinstall.com&gt;
+   - `ALLOWED_ORIGIN` = https://toplineinstall.com
+5. Put the function URL in `assets/js/contact-form.js` (`ENDPOINT`), e.g.
+   `https://<your-vercel-app>.vercel.app/api/contact`, then commit.
+
+Never commit the Resend key. It belongs only in Vercel environment variables.
