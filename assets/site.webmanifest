@@ -1,0 +1,13 @@
+{
+  "name": "Top Line Exteriors",
+  "short_name": "Top Line",
+  "description": "Fencing & Exterior Repairs, Built for Michigan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EFF6FC",
+  "theme_color": "#FF6A00",
+  "icons": [
+    { "src": "assets/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "assets/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

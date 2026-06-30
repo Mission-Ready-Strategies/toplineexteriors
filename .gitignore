@@ -3,7 +3,7 @@ bin/
 
 # Internal brand source: brand-package PDF, social mockups, source logos.
 # The site uses the copies in /assets instead. Kept out of the public repo.
-Branding/
+branding/
 
 # Full-site prototype (CDN-based WIP, not the production build)
 prototype/
