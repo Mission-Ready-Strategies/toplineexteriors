@@ -1,6 +1,6 @@
 # MRS agent standards
 
-MRS standards v1.1 (2026-09-29). Owner: Justin Sherman, Mission Ready Strategies (MRS).
+MRS standards v1.2 (2026-09-30). Owner: Justin Sherman, Mission Ready Strategies (MRS).
 
 This file is the same in every MRS repository, down to the `## This repo` heading. The same text is the Linear team document "MRS agent standards". Everything under `## This repo` is specific to this repository (stack, commands, deploy, Linear project, gotchas). `CLAUDE.md` is one line, `@AGENTS.md`, so Codex and Claude read the same file. These standards apply to all Codex and Claude work, TaskUs and other non-MRS work included (owner decision D1, 2026-09-29).
 
@@ -167,7 +167,7 @@ A repository's design document may record a named exception, such as pill button
 - Refresh `git status` before editing. Other people and agents may be working in the same tree; leave changes you didn't make alone.
 - In a shared checkout, never run tree-wide commands: `git stash`, `git clean`, `git reset`, `git restore .`, `git checkout -- .`, `git add -A` or `.`, or `git commit -am`. Stage explicit files and review the staged diff.
 - Fetch before any Git edit, and check the branch and any uncommitted work.
-- Commit after each verified slice. Keep each commit to one area and one task, and put the Linear issue ID in the message (`MIS-123: …`). **No attribution anywhere** (owner decision D3, 2026-09-29): commit messages and PR bodies carry no `Co-Authored-By`, "Generated with" or other agent attribution lines.
+- Commit after each verified slice. Keep each commit to one area and one task, and put the Linear issue ID in the message (`MIS-123: …`). **Attribution** (owner decision D3, revised 2026-09-30): AI `Co-Authored-By` trailers are kept on every commit and in squash-merge bodies, and Claude PR bodies end with the "Generated with Claude Code" line (owner decision 2026-09-26, reaffirmed 2026-09-30).
 - **Standing authorization** (owner decision D7, 2026-09-29) in every repository: commit task work and push task branches (non-force) to `origin` without asking. This overrides older repository rules such as "commit only when asked" or "don't commit for me". Production stays gated: production releases, pushes to a production branch, hosted production migrations, provider configuration, external messages and purchases each need authorization for that specific action, unless the repository's file records a standing grant (for example, Leo's standing grant for `supabase db push`).
 - Never force-push a shared branch, rewrite published history, or delete a branch you didn't create.
 - The release path is: local, then staging, then production. Each repository names its branches and domains. Push to the production branch only under the repository's standing grant or Justin's explicit go for that release.
