@@ -35,6 +35,12 @@ bin/tailwindcss -i src/input.css -o assets/css/site.css --watch     # while deve
 
 Commit the regenerated `assets/css/site.css` so GitHub Pages serves the latest styles.
 
+## Source size check
+
+Run `bash scripts/check-size.sh` before submitting changes, and `bash scripts/check-size.test.sh` to exercise its boundary cases. These commands use Git, Bash and standard shell utilities; no Node tooling is needed.
+
+Handwritten source is limited to 750 lines, or 1,000 for `*.test.*` and `*.spec.*`, counted with `wc -l`. The check includes untracked and ignored source. This site has no oversized files, so `scripts/size-baseline.txt` is deliberately empty and cannot gain new allowances. Split growing source by responsibility. The exact generated output `assets/css/site.css` is exempt; its handwritten input `src/input.css` is checked. There are no applied migrations, vendored source or scenario-only stories in this site. Future exemptions require an explicit, documented producer; a filename alone is not an exemption.
+
 ## Images
 
 All site photos are placed and served as WebP from `assets/img/` (12 total, no placeholders remain). See `IMAGES.md` for the slot-by-slot manifest, intended filenames, and target sizes.
